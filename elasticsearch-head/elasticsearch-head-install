@@ -1,0 +1,6 @@
+#/bin/bash
+
+git clone https://github.com/mobz/elasticsearch-head.git
+cd elasticsearch-head/ & npm install
+sed -i "92a/                                         hostname: '192.168.1.181'" Gruntfile.js
+nohup ./node_modules/grunt/bin/grunt server>start.log 2>&1 &
